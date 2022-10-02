@@ -124,6 +124,23 @@
             </li>
 
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVoucher"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Voucher</span>
+                </a>
+                <div id="collapseVoucher" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="dropdown-item" href="{{ URL::to('get-voucher-form') }}"> CREATE VOUCHER</a>
+                <a class="dropdown-item" href="{{ URL::to('get-all-vouchers') }}"> ALL VOUCHERS </a>
+            
+                    </div>
+                </div>
+            </li>
+
+
           
 
             <!-- Divider -->

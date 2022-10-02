@@ -16,7 +16,7 @@ class CourseController extends Controller
      */
     public function index($id)
     {
-        return GeneralResource::collection(Course::find($id));
+        return GeneralResource::collection(Course::all());
     }
 
     /**
@@ -83,5 +83,12 @@ class CourseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAllCoursesByDepartmentId($id){
+
+        $coursesById = Course::where('department_id',  $id)->get();
+        return GeneralResource::collection($coursesById);
+
     }
 }

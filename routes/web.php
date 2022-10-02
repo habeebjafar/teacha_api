@@ -6,7 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TopicController;
-
+use App\Http\Controllers\VouncherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +62,14 @@ Route::get('get-course-by-department_update/{id}', [TopicController::class, 'get
 
 Route::post('update-topic-form/{id}', [TopicController::class, 'update']);
 Route::get('delete-slider/{id}', [SliderController::class, 'destroy']);
+
+//Voucher
+
+Route::get('get-voucher-form', [VouncherController::class, 'create']);
+Route::post('post-voucher-form', [VouncherController::class, 'store']);
+Route::get('get-all-vouchers', [VouncherController::class, 'index']);
+Route::get('edit-course/{id}', [CourseController::class, 'edit']);
+Route::post('update-course-form/{id}', [CourseController::class, 'update']);
+Route::get('delete-slider/{id}', [SliderController::class, 'destroy']);
+
 

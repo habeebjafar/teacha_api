@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\GeneralResource;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class TopicController extends Controller
@@ -14,7 +16,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        //
+        return GeneralResource::collection(Topic::all());
     }
 
     /**
@@ -81,5 +83,10 @@ class TopicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAllTopicsByCourseId($id){
+        $topicsByCourseId = Topic::where('course_id', $id)->get();
+        return GeneralResource::collection($topicsByCourseId);
     }
 }
